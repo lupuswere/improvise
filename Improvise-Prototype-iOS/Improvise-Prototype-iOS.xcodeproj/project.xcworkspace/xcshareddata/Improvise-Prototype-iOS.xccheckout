@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>02CA6FCA-DDAE-43D4-8425-1FE3CAB194CB</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>Improvise-Prototype-iOS</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>82682125CA2D67B48596FD466C508C5449CB71F4</key>
 		<string>github.com:lupuswere/improvise.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Improvise-Prototype-iOS/Improvise-Prototype-iOS.xcodeproj/project.xcworkspace</string>
+	<string>Improvise-Prototype-iOS/Improvise-Prototype-iOS.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>82682125CA2D67B48596FD466C508C5449CB71F4</key>

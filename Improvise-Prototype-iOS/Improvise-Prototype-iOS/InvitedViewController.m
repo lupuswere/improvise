@@ -6,13 +6,13 @@
 //  Copyright (c) 2015年 Lifei Li. All rights reserved.
 //
 
-#import "SecondViewController.h"
+#import "InvitedViewController.h"
 
-@interface SecondViewController ()
+@interface InvitedViewController ()
 
 @end
 
-@implementation SecondViewController
+@implementation InvitedViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FirstViewController : UIViewController
+@interface HomeViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UILabel *testLabel;
 
 @end
 

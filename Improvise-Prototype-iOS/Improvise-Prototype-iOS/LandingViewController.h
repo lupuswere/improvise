@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface LandingViewController : UIViewController
+- (IBAction)loginButton:(UIButton *)sender;
+@property (weak, nonatomic) IBOutlet UITextField *usernameText;
+@property (weak, nonatomic) IBOutlet UITextField *passwordText;
+@property (weak, nonatomic) IBOutlet UILabel *errorMessageText;
+- (IBAction)tapOnScreen:(UITapGestureRecognizer *)sender;
 
 @end

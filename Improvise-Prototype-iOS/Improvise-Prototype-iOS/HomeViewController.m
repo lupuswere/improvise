@@ -6,15 +6,20 @@
 //  Copyright (c) 2015年 Lifei Li. All rights reserved.
 //
 
-#import "FirstViewController.h"
-
-@interface FirstViewController ()
+#import "HomeViewController.h"
+#import "AppDelegate.h"
+@interface HomeViewController ()
 
 @end
 
-@implementation FirstViewController
+@implementation HomeViewController
 
 - (void)viewDidLoad {
+    //Test Code
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    if(appDelegate.curUsername) {
+        self.testLabel.text = appDelegate.curUsername;
+    }
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 }

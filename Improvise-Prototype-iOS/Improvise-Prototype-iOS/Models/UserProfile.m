@@ -9,5 +9,12 @@
 #import "UserProfile.h"
 
 @implementation UserProfile
-
+- (instancetype)init
+{
+    if (self = [super init]) {
+        _username = @"";
+        _password = @"";
+    }
+    return self;
+}
 @end

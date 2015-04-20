@@ -16,6 +16,9 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    if (!(self.curUsername = [NSKeyedUnarchiver unarchiveObjectWithFile:[self curUsernameStorageLocation]])) {
+        _curUsername = @"";
+    }
     // Override point for customization after application launch.
     return YES;
 }
@@ -25,9 +28,23 @@
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
 }
 
+- (NSString *)applicationDocumentsFolderName
+{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths firstObject];
+    NSParameterAssert(documentsDirectory);
+    return documentsDirectory;
+}
+
+- (NSString *)curUsernameStorageLocation
+{
+    return [[self applicationDocumentsFolderName] stringByAppendingPathComponent:@"curUsername"];
+}
+
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    [NSKeyedArchiver archiveRootObject:self.curUsername toFile:[self curUsernameStorageLocation]];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {

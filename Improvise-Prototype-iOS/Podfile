@@ -1,0 +1,2 @@
+pod 'SIOSocket', '~> 0.2.0'
+pod 'RestKit', '~> 0.20.0'
