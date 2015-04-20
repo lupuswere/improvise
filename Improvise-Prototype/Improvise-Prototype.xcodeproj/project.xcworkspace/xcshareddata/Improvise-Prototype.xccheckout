@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>888633A8-FF1C-4055-B8D1-B915A7261C25</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Improvise-Prototype</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>82682125CA2D67B48596FD466C508C5449CB71F4</key>
+		<string>github.com:lupuswere/improvise.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Improvise-Prototype/Improvise-Prototype.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>82682125CA2D67B48596FD466C508C5449CB71F4</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:lupuswere/improvise.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>82682125CA2D67B48596FD466C508C5449CB71F4</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>82682125CA2D67B48596FD466C508C5449CB71F4</string>
+			<key>IDESourceControlWCCName</key>
+			<string>improvise</string>
+		</dict>
+	</array>
+</dict>
+</plist>

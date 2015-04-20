@@ -1,0 +1,437 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9CF5D5551AE47B8C00779ED6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CF5D5541AE47B8C00779ED6 /* main.m */; };
+		9CF5D5581AE47B8C00779ED6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CF5D5571AE47B8C00779ED6 /* AppDelegate.m */; };
+		9CF5D55B1AE47B8C00779ED6 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CF5D55A1AE47B8C00779ED6 /* FirstViewController.m */; };
+		9CF5D55E1AE47B8C00779ED6 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CF5D55D1AE47B8C00779ED6 /* SecondViewController.m */; };
+		9CF5D5611AE47B8C00779ED6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CF5D55F1AE47B8C00779ED6 /* Main.storyboard */; };
+		9CF5D5631AE47B8C00779ED6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CF5D5621AE47B8C00779ED6 /* Images.xcassets */; };
+		9CF5D5661AE47B8C00779ED6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CF5D5641AE47B8C00779ED6 /* LaunchScreen.xib */; };
+		9CF5D5721AE47B8C00779ED6 /* Improvise_Prototype_iOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CF5D5711AE47B8C00779ED6 /* Improvise_Prototype_iOSTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9CF5D56C1AE47B8C00779ED6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9CF5D5471AE47B8C00779ED6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9CF5D54E1AE47B8C00779ED6;
+			remoteInfo = "Improvise-Prototype-iOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9CF5D54F1AE47B8C00779ED6 /* Improvise-Prototype-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Improvise-Prototype-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9CF5D5531AE47B8C00779ED6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9CF5D5541AE47B8C00779ED6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9CF5D5561AE47B8C00779ED6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		9CF5D5571AE47B8C00779ED6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		9CF5D5591AE47B8C00779ED6 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		9CF5D55A1AE47B8C00779ED6 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		9CF5D55C1AE47B8C00779ED6 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		9CF5D55D1AE47B8C00779ED6 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		9CF5D5601AE47B8C00779ED6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9CF5D5621AE47B8C00779ED6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		9CF5D5651AE47B8C00779ED6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		9CF5D56B1AE47B8C00779ED6 /* Improvise-Prototype-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Improvise-Prototype-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9CF5D5701AE47B8C00779ED6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9CF5D5711AE47B8C00779ED6 /* Improvise_Prototype_iOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Improvise_Prototype_iOSTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9CF5D54C1AE47B8C00779ED6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9CF5D5681AE47B8C00779ED6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9CF5D5461AE47B8C00779ED6 = {
+			isa = PBXGroup;
+			children = (
+				9CF5D5511AE47B8C00779ED6 /* Improvise-Prototype-iOS */,
+				9CF5D56E1AE47B8C00779ED6 /* Improvise-Prototype-iOSTests */,
+				9CF5D5501AE47B8C00779ED6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9CF5D5501AE47B8C00779ED6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9CF5D54F1AE47B8C00779ED6 /* Improvise-Prototype-iOS.app */,
+				9CF5D56B1AE47B8C00779ED6 /* Improvise-Prototype-iOSTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9CF5D5511AE47B8C00779ED6 /* Improvise-Prototype-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				9CF5D5561AE47B8C00779ED6 /* AppDelegate.h */,
+				9CF5D5571AE47B8C00779ED6 /* AppDelegate.m */,
+				9CF5D5591AE47B8C00779ED6 /* FirstViewController.h */,
+				9CF5D55A1AE47B8C00779ED6 /* FirstViewController.m */,
+				9CF5D55C1AE47B8C00779ED6 /* SecondViewController.h */,
+				9CF5D55D1AE47B8C00779ED6 /* SecondViewController.m */,
+				9CF5D55F1AE47B8C00779ED6 /* Main.storyboard */,
+				9CF5D5621AE47B8C00779ED6 /* Images.xcassets */,
+				9CF5D5641AE47B8C00779ED6 /* LaunchScreen.xib */,
+				9CF5D5521AE47B8C00779ED6 /* Supporting Files */,
+			);
+			path = "Improvise-Prototype-iOS";
+			sourceTree = "<group>";
+		};
+		9CF5D5521AE47B8C00779ED6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9CF5D5531AE47B8C00779ED6 /* Info.plist */,
+				9CF5D5541AE47B8C00779ED6 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9CF5D56E1AE47B8C00779ED6 /* Improvise-Prototype-iOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				9CF5D5711AE47B8C00779ED6 /* Improvise_Prototype_iOSTests.m */,
+				9CF5D56F1AE47B8C00779ED6 /* Supporting Files */,
+			);
+			path = "Improvise-Prototype-iOSTests";
+			sourceTree = "<group>";
+		};
+		9CF5D56F1AE47B8C00779ED6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9CF5D5701AE47B8C00779ED6 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9CF5D54E1AE47B8C00779ED6 /* Improvise-Prototype-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9CF5D5751AE47B8C00779ED6 /* Build configuration list for PBXNativeTarget "Improvise-Prototype-iOS" */;
+			buildPhases = (
+				9CF5D54B1AE47B8C00779ED6 /* Sources */,
+				9CF5D54C1AE47B8C00779ED6 /* Frameworks */,
+				9CF5D54D1AE47B8C00779ED6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Improvise-Prototype-iOS";
+			productName = "Improvise-Prototype-iOS";
+			productReference = 9CF5D54F1AE47B8C00779ED6 /* Improvise-Prototype-iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9CF5D56A1AE47B8C00779ED6 /* Improvise-Prototype-iOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9CF5D5781AE47B8C00779ED6 /* Build configuration list for PBXNativeTarget "Improvise-Prototype-iOSTests" */;
+			buildPhases = (
+				9CF5D5671AE47B8C00779ED6 /* Sources */,
+				9CF5D5681AE47B8C00779ED6 /* Frameworks */,
+				9CF5D5691AE47B8C00779ED6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9CF5D56D1AE47B8C00779ED6 /* PBXTargetDependency */,
+			);
+			name = "Improvise-Prototype-iOSTests";
+			productName = "Improvise-Prototype-iOSTests";
+			productReference = 9CF5D56B1AE47B8C00779ED6 /* Improvise-Prototype-iOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9CF5D5471AE47B8C00779ED6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = "Lifei Li";
+				TargetAttributes = {
+					9CF5D54E1AE47B8C00779ED6 = {
+						CreatedOnToolsVersion = 6.3;
+					};
+					9CF5D56A1AE47B8C00779ED6 = {
+						CreatedOnToolsVersion = 6.3;
+						TestTargetID = 9CF5D54E1AE47B8C00779ED6;
+					};
+				};
+			};
+			buildConfigurationList = 9CF5D54A1AE47B8C00779ED6 /* Build configuration list for PBXProject "Improvise-Prototype-iOS" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9CF5D5461AE47B8C00779ED6;
+			productRefGroup = 9CF5D5501AE47B8C00779ED6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9CF5D54E1AE47B8C00779ED6 /* Improvise-Prototype-iOS */,
+				9CF5D56A1AE47B8C00779ED6 /* Improvise-Prototype-iOSTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9CF5D54D1AE47B8C00779ED6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9CF5D5611AE47B8C00779ED6 /* Main.storyboard in Resources */,
+				9CF5D5661AE47B8C00779ED6 /* LaunchScreen.xib in Resources */,
+				9CF5D5631AE47B8C00779ED6 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9CF5D5691AE47B8C00779ED6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9CF5D54B1AE47B8C00779ED6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9CF5D55E1AE47B8C00779ED6 /* SecondViewController.m in Sources */,
+				9CF5D5581AE47B8C00779ED6 /* AppDelegate.m in Sources */,
+				9CF5D55B1AE47B8C00779ED6 /* FirstViewController.m in Sources */,
+				9CF5D5551AE47B8C00779ED6 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9CF5D5671AE47B8C00779ED6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9CF5D5721AE47B8C00779ED6 /* Improvise_Prototype_iOSTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9CF5D56D1AE47B8C00779ED6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9CF5D54E1AE47B8C00779ED6 /* Improvise-Prototype-iOS */;
+			targetProxy = 9CF5D56C1AE47B8C00779ED6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9CF5D55F1AE47B8C00779ED6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9CF5D5601AE47B8C00779ED6 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9CF5D5641AE47B8C00779ED6 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9CF5D5651AE47B8C00779ED6 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9CF5D5731AE47B8C00779ED6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		9CF5D5741AE47B8C00779ED6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9CF5D5761AE47B8C00779ED6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Improvise-Prototype-iOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		9CF5D5771AE47B8C00779ED6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Improvise-Prototype-iOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		9CF5D5791AE47B8C00779ED6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Improvise-Prototype-iOSTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Improvise-Prototype-iOS.app/Improvise-Prototype-iOS";
+			};
+			name = Debug;
+		};
+		9CF5D57A1AE47B8C00779ED6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Improvise-Prototype-iOSTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Improvise-Prototype-iOS.app/Improvise-Prototype-iOS";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9CF5D54A1AE47B8C00779ED6 /* Build configuration list for PBXProject "Improvise-Prototype-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9CF5D5731AE47B8C00779ED6 /* Debug */,
+				9CF5D5741AE47B8C00779ED6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9CF5D5751AE47B8C00779ED6 /* Build configuration list for PBXNativeTarget "Improvise-Prototype-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9CF5D5761AE47B8C00779ED6 /* Debug */,
+				9CF5D5771AE47B8C00779ED6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		9CF5D5781AE47B8C00779ED6 /* Build configuration list for PBXNativeTarget "Improvise-Prototype-iOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9CF5D5791AE47B8C00779ED6 /* Debug */,
+				9CF5D57A1AE47B8C00779ED6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9CF5D5471AE47B8C00779ED6 /* Project object */;
+}
