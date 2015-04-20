@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		89E2E4F290B36AE64D0D17CA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC5180BCBC0BC54118912C86 /* libPods.a */; };
+		9C0B3C961AE5B1E700BA57A8 /* AcceptedInvitations.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C0B3C951AE5B1E700BA57A8 /* AcceptedInvitations.m */; };
 		9CF5D5551AE47B8C00779ED6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CF5D5541AE47B8C00779ED6 /* main.m */; };
 		9CF5D5581AE47B8C00779ED6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CF5D5571AE47B8C00779ED6 /* AppDelegate.m */; };
 		9CF5D55B1AE47B8C00779ED6 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CF5D55A1AE47B8C00779ED6 /* HomeViewController.m */; };
@@ -33,6 +34,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9C0B3C941AE5B1E700BA57A8 /* AcceptedInvitations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AcceptedInvitations.h; path = Models/AcceptedInvitations.h; sourceTree = "<group>"; };
+		9C0B3C951AE5B1E700BA57A8 /* AcceptedInvitations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AcceptedInvitations.m; path = Models/AcceptedInvitations.m; sourceTree = "<group>"; };
 		9CF5D54F1AE47B8C00779ED6 /* Improvise-Prototype-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Improvise-Prototype-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CF5D5531AE47B8C00779ED6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9CF5D5541AE47B8C00779ED6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -172,6 +175,8 @@
 			children = (
 				9CF5D58B1AE49B9E00779ED6 /* UserProfile.h */,
 				9CF5D58C1AE49B9E00779ED6 /* UserProfile.m */,
+				9C0B3C941AE5B1E700BA57A8 /* AcceptedInvitations.h */,
+				9C0B3C951AE5B1E700BA57A8 /* AcceptedInvitations.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -312,6 +317,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9CF5D58D1AE49B9E00779ED6 /* UserProfile.m in Sources */,
+				9C0B3C961AE5B1E700BA57A8 /* AcceptedInvitations.m in Sources */,
 				9CF5D55E1AE47B8C00779ED6 /* InvitedViewController.m in Sources */,
 				9CF5D58A1AE498C200779ED6 /* LandingViewController.m in Sources */,
 				9CF5D5581AE47B8C00779ED6 /* AppDelegate.m in Sources */,

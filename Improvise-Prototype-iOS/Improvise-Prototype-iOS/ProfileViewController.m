@@ -7,7 +7,7 @@
 //
 
 #import "ProfileViewController.h"
-
+#import "AppDelegate.h"
 @interface ProfileViewController ()
 
 @end
@@ -34,4 +34,9 @@
 }
 */
 
+- (IBAction)logOutButton:(UIButton *)sender {
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    appDelegate.curUsername = @"";
+    [self performSegueWithIdentifier:@"logOutSegue" sender:sender];
+}
 @end

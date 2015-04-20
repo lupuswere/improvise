@@ -10,6 +10,7 @@
 
 @interface LandingViewController : UIViewController
 - (IBAction)loginButton:(UIButton *)sender;
+- (IBAction)signupButton:(UIButton *)sender;
 @property (weak, nonatomic) IBOutlet UITextField *usernameText;
 @property (weak, nonatomic) IBOutlet UITextField *passwordText;
 @property (weak, nonatomic) IBOutlet UILabel *errorMessageText;

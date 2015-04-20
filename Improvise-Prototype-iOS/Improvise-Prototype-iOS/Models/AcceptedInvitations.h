@@ -9,5 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface AcceptedInvitations : NSObject
-
+@property (strong, nonatomic) NSString *sender;
+@property (strong, nonatomic) NSString *content;
+@property (strong, nonatomic) NSString *receiver;
 @end

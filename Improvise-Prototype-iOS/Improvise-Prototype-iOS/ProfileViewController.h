@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface ProfileViewController : UIViewController
+- (IBAction)logOutButton:(UIButton *)sender;
+
 
 @end

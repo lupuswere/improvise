@@ -9,5 +9,13 @@
 #import "AcceptedInvitations.h"
 
 @implementation AcceptedInvitations
-
+- (instancetype)init
+{
+    if (self = [super init]) {
+        _sender = @"";
+        _content = @"";
+        _receiver = @"";
+    }
+    return self;
+}
 @end

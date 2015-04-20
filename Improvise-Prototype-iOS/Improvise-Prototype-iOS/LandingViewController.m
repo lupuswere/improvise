@@ -70,6 +70,58 @@
         }
     }
 }
+
+- (IBAction)signupButton:(UIButton *)sender {
+    self.errorMessageText.text = @"";
+    NSString *usernameText = self.usernameText.text;
+    NSString *passwordText = self.passwordText.text;
+    if (usernameText && ![usernameText isEqualToString:@""] && passwordText && ![passwordText isEqualToString:@""]) {
+        NSError *error;
+        NSString *urlStr = [NSString stringWithFormat:@"%@%@", @"http://improvise.jit.su/checkuser/", usernameText];
+        NSURL *url = [NSURL URLWithString:urlStr];
+        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+        [request setHTTPMethod:@"GET"];
+        [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+        
+        NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse: nil error:&error];
+        if(data) {
+            NSDictionary *JSON =
+            [NSJSONSerialization JSONObjectWithData: data
+                                            options: NSJSONReadingMutableContainers
+                                              error: &error];
+            if([JSON objectForKey:@"username"]) {
+                self.errorMessageText.text = @"Username already exists!";
+            } else {
+                //post
+                NSError *postError;
+                NSString *post = [NSString stringWithFormat:@"username=%@&password=%@", usernameText, passwordText];
+                NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+                
+                NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
+                NSString *urlStrPOST = [NSString stringWithFormat:@"http://improvise.jit.su/signup"];
+                NSMutableURLRequest *postRequest = [[NSMutableURLRequest alloc] init];
+                [postRequest setURL:[NSURL URLWithString:urlStrPOST]];
+                [postRequest setHTTPMethod:@"POST"];
+                [postRequest setValue:postLength forHTTPHeaderField:@"Content-Length"];
+                [postRequest setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+                [postRequest setHTTPBody:postData];
+                NSData *dataPOSTed = [NSURLConnection sendSynchronousRequest:postRequest returningResponse: nil error:&postError];
+                if(dataPOSTed) {
+                    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+                    appDelegate.curUsername = usernameText;
+                    [self performSegueWithIdentifier:@"logInSegue" sender:sender];
+                } else {
+                    self.errorMessageText.text = @"Unknown error. Please try again later.";
+                }
+            }
+        } else {
+            self.errorMessageText.text = @"Unknown error. Please try again later.";
+        }
+    } else {
+        self.errorMessageText.text = @"Username or password is empty!";
+    }
+}
+
 - (IBAction)tapOnScreen:(UITapGestureRecognizer *)sender {
     [self.usernameText resignFirstResponder];
     [self.passwordText resignFirstResponder];
