@@ -258,6 +258,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" image="star" id="7JO-Bo-fTr"/>
+                    <connections>
+                        <outlet property="acceptedInvitationsTableView" destination="7HR-rt-bpB" id="gQr-lT-HH8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5tc-kA-q8D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

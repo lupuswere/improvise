@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface AcceptedViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITableView *acceptedInvitationsTableView;
 
 @end
