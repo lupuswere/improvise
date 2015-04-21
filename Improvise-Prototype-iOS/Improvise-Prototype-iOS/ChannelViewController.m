@@ -21,12 +21,18 @@
     //TODO Connect to WebSocket
     [SIOSocket socketWithHost: @"http://improvise.jit.su" response: ^(SIOSocket *socket) {
         self.socket = socket;
+        __weak typeof(self) weakSelf = self;
+        self.socket.onConnect = ^()
+        {
+            weakSelf.socketIsConnected = YES;
+        };
+        [self.socket on: @"message" callback: ^(SIOParameterArray *args)
+         {
+             NSString *message = [args firstObject];
+             NSLog(@"%@", message);
+         }];
     }];
-    __weak typeof(self) weakSelf = self;
-    self.socket.onConnect = ^()
-    {
-        weakSelf.socketIsConnected = YES;
-    };
+    
     // Do any additional setup after loading the view.
 }
 
