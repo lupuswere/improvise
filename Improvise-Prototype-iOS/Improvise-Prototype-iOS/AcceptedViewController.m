@@ -60,31 +60,6 @@
 {
     AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     appDelegate.invitations = [[Invitations alloc] init];
-    /* Load Invited Invitations */
-    /*
-    NSError *error2;
-    NSString *urlStrInvitedInvitations = [NSString stringWithFormat:@"%@%@", @"http://improvise.jit.su/invitedInvitations/", appDelegate.curUsername];
-    NSURL *urlInvitedInvitations = [NSURL URLWithString:urlStrInvitedInvitations];
-    NSMutableURLRequest *requestInvitedInvitations = [NSMutableURLRequest requestWithURL:urlInvitedInvitations];
-    [requestInvitedInvitations setHTTPMethod:@"GET"];
-    [requestInvitedInvitations setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    
-    NSData *dataInvitedInvitations = [NSURLConnection sendSynchronousRequest:requestInvitedInvitations returningResponse: nil error:&error2];
-    if(dataInvitedInvitations) {
-        NSMutableArray *JSONInvitedInvitations =
-        [NSJSONSerialization JSONObjectWithData: dataInvitedInvitations
-                                        options: NSJSONReadingMutableContainers
-                                          error: &error2];
-        NSLog(@"%@", JSONInvitedInvitations);
-        for(id element in JSONInvitedInvitations) {
-            InvitedInvitation *invitedInvitation = [[InvitedInvitation alloc] init];
-            invitedInvitation.sender = [element objectForKey:@"sender"];
-            invitedInvitation.content = [element objectForKey:@"content"];
-            invitedInvitation.receiver = [element objectForKey:@"receiver"];
-            [appDelegate.invitations.invitedInvitations addObject:invitedInvitation];
-        }
-    }*/
-    /* Load Accepted Invitations */
     NSError *error3;
     NSString *urlStrAcceptedInvitations = [NSString stringWithFormat:@"%@%@", @"http://improvise.jit.su/acceptedInvitations/", appDelegate.curUsername];
     NSURL *urlAcceptedInvitations = [NSURL URLWithString:urlStrAcceptedInvitations];

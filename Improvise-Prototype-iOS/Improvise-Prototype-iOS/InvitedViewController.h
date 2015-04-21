@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface InvitedViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITableView *invitedInvitationsTableView;
 
 
 @end

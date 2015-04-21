@@ -8,27 +8,56 @@
 
 #import "InvitedViewController.h"
 #import "AppDelegate.h"
+#import "NewAcceptedInvitation.h"
 @interface InvitedViewController ()
 @property (strong, nonatomic) Invitations *invitations;
-@property (strong, nonatomic) NSDictionary *groupedInvitedInvitations;
+@property (strong, nonatomic) NSMutableArray *contentReceivers;
 @end
 
 @implementation InvitedViewController
 
 - (void)viewDidLoad {
+    [self refreshInvitedInvitationsList];
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [self refreshInvitedInvitationsList];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-- (void)refreshAcceptedInvitationsList
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [self.contentReceivers count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *TableSampleIdentifier = @"TableSampleIdentifier";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:TableSampleIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc]
+                initWithStyle:UITableViewCellStyleSubtitle
+                reuseIdentifier:TableSampleIdentifier];
+    }
+    
+    NSUInteger row = [indexPath row];
+    NewAcceptedInvitation *newAcceptedInvitation = [self.contentReceivers objectAtIndex:row];
+    cell.textLabel.text = newAcceptedInvitation.content;
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@%@", @"Participants: ", newAcceptedInvitation.receivers];
+    return cell;
+}
+
+- (void)refreshInvitedInvitationsList
 {
     AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     appDelegate.invitations = [[Invitations alloc] init];
+    NSMutableDictionary *tmpDictionary = [[NSMutableDictionary alloc] init];
+    self.contentReceivers = [[NSMutableArray alloc] init];
     /* Load Invited Invitations */
     NSError *error2;
     NSString *urlStrInvitedInvitations = [NSString stringWithFormat:@"%@%@", @"http://improvise.jit.su/invitedInvitations/", appDelegate.curUsername];
@@ -50,33 +79,22 @@
             invitedInvitation.content = [element objectForKey:@"content"];
             invitedInvitation.receiver = [element objectForKey:@"receiver"];
             //TODO: group invited invitations
-            
+            if([tmpDictionary objectForKey:invitedInvitation.content]) {
+                NSString *receivers = [tmpDictionary objectForKey:invitedInvitation.content];
+                NSString *newReceivers = [NSString stringWithFormat:@"%@, %@", receivers, invitedInvitation.receiver];
+                [tmpDictionary setObject:newReceivers forKey:invitedInvitation.content];
+            } else {
+                [tmpDictionary setObject:invitedInvitation.receiver forKey:invitedInvitation.content];
+            }
             [appDelegate.invitations.invitedInvitations addObject:invitedInvitation];
         }
-    }
-    /* Load Accepted Invitations */
-    /*NSError *error3;
-    NSString *urlStrAcceptedInvitations = [NSString stringWithFormat:@"%@%@", @"http://improvise.jit.su/acceptedInvitations/", appDelegate.curUsername];
-    NSURL *urlAcceptedInvitations = [NSURL URLWithString:urlStrAcceptedInvitations];
-    NSMutableURLRequest *requestAcceptedInvitations = [NSMutableURLRequest requestWithURL:urlAcceptedInvitations];
-    [requestAcceptedInvitations setHTTPMethod:@"GET"];
-    [requestAcceptedInvitations setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    
-    NSData *dataAcceptedInvitations = [NSURLConnection sendSynchronousRequest:requestAcceptedInvitations returningResponse: nil error:&error3];
-    if(dataAcceptedInvitations) {
-        NSMutableArray *JSONAcceptedInvitations =
-        [NSJSONSerialization JSONObjectWithData: dataAcceptedInvitations
-                                        options: NSJSONReadingMutableContainers
-                                          error: &error3];
-        //        NSLog(@"%@", JSONAcceptedInvitations);
-        for(id element in JSONAcceptedInvitations) {
-            AcceptedInvitation *acceptedInvitation = [[AcceptedInvitation alloc] init];
-            acceptedInvitation.sender = [element objectForKey:@"sender"];
-            acceptedInvitation.content = [element objectForKey:@"content"];
-            acceptedInvitation.receiver = [element objectForKey:@"receiver"];
-            [appDelegate.invitations.acceptedInvitations addObject:acceptedInvitation];
+        for(id key in tmpDictionary) {
+            NewAcceptedInvitation *newAcceptedInvitation = [[NewAcceptedInvitation alloc] init];
+            newAcceptedInvitation.content = key;
+            newAcceptedInvitation.receivers = [tmpDictionary objectForKey:key];
+            [self.contentReceivers addObject:newAcceptedInvitation];
         }
-    }*/
+    }
     _invitations = appDelegate.invitations;
 }
 @end
