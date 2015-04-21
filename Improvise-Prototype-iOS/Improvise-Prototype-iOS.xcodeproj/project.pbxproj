@@ -8,7 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		89E2E4F290B36AE64D0D17CA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC5180BCBC0BC54118912C86 /* libPods.a */; };
-		9C0B3C961AE5B1E700BA57A8 /* AcceptedInvitations.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C0B3C951AE5B1E700BA57A8 /* AcceptedInvitations.m */; };
+		9C0B3C961AE5B1E700BA57A8 /* AcceptedInvitation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C0B3C951AE5B1E700BA57A8 /* AcceptedInvitation.m */; };
+		9C0B3C991AE5C63500BA57A8 /* InvitedInvitation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C0B3C981AE5C63500BA57A8 /* InvitedInvitation.m */; };
+		9C0B3C9C1AE5C66F00BA57A8 /* Invitations.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C0B3C9B1AE5C66F00BA57A8 /* Invitations.m */; };
 		9CF5D5551AE47B8C00779ED6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CF5D5541AE47B8C00779ED6 /* main.m */; };
 		9CF5D5581AE47B8C00779ED6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CF5D5571AE47B8C00779ED6 /* AppDelegate.m */; };
 		9CF5D55B1AE47B8C00779ED6 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CF5D55A1AE47B8C00779ED6 /* HomeViewController.m */; };
@@ -34,8 +36,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		9C0B3C941AE5B1E700BA57A8 /* AcceptedInvitations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AcceptedInvitations.h; path = Models/AcceptedInvitations.h; sourceTree = "<group>"; };
-		9C0B3C951AE5B1E700BA57A8 /* AcceptedInvitations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AcceptedInvitations.m; path = Models/AcceptedInvitations.m; sourceTree = "<group>"; };
+		9C0B3C941AE5B1E700BA57A8 /* AcceptedInvitation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AcceptedInvitation.h; path = Models/AcceptedInvitation.h; sourceTree = "<group>"; };
+		9C0B3C951AE5B1E700BA57A8 /* AcceptedInvitation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AcceptedInvitation.m; path = Models/AcceptedInvitation.m; sourceTree = "<group>"; };
+		9C0B3C971AE5C63500BA57A8 /* InvitedInvitation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InvitedInvitation.h; path = Models/InvitedInvitation.h; sourceTree = "<group>"; };
+		9C0B3C981AE5C63500BA57A8 /* InvitedInvitation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InvitedInvitation.m; path = Models/InvitedInvitation.m; sourceTree = "<group>"; };
+		9C0B3C9A1AE5C66F00BA57A8 /* Invitations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Invitations.h; path = Models/Invitations.h; sourceTree = "<group>"; };
+		9C0B3C9B1AE5C66F00BA57A8 /* Invitations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Invitations.m; path = Models/Invitations.m; sourceTree = "<group>"; };
 		9CF5D54F1AE47B8C00779ED6 /* Improvise-Prototype-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Improvise-Prototype-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CF5D5531AE47B8C00779ED6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9CF5D5541AE47B8C00779ED6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -175,8 +181,12 @@
 			children = (
 				9CF5D58B1AE49B9E00779ED6 /* UserProfile.h */,
 				9CF5D58C1AE49B9E00779ED6 /* UserProfile.m */,
-				9C0B3C941AE5B1E700BA57A8 /* AcceptedInvitations.h */,
-				9C0B3C951AE5B1E700BA57A8 /* AcceptedInvitations.m */,
+				9C0B3C941AE5B1E700BA57A8 /* AcceptedInvitation.h */,
+				9C0B3C951AE5B1E700BA57A8 /* AcceptedInvitation.m */,
+				9C0B3C971AE5C63500BA57A8 /* InvitedInvitation.h */,
+				9C0B3C981AE5C63500BA57A8 /* InvitedInvitation.m */,
+				9C0B3C9A1AE5C66F00BA57A8 /* Invitations.h */,
+				9C0B3C9B1AE5C66F00BA57A8 /* Invitations.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -317,13 +327,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				9CF5D58D1AE49B9E00779ED6 /* UserProfile.m in Sources */,
-				9C0B3C961AE5B1E700BA57A8 /* AcceptedInvitations.m in Sources */,
+				9C0B3C961AE5B1E700BA57A8 /* AcceptedInvitation.m in Sources */,
 				9CF5D55E1AE47B8C00779ED6 /* InvitedViewController.m in Sources */,
 				9CF5D58A1AE498C200779ED6 /* LandingViewController.m in Sources */,
+				9C0B3C9C1AE5C66F00BA57A8 /* Invitations.m in Sources */,
 				9CF5D5581AE47B8C00779ED6 /* AppDelegate.m in Sources */,
 				9CF5D55B1AE47B8C00779ED6 /* HomeViewController.m in Sources */,
 				9CF5D5551AE47B8C00779ED6 /* main.m in Sources */,
 				9CF5D5801AE47CBA00779ED6 /* ProfileViewController.m in Sources */,
+				9C0B3C991AE5C63500BA57A8 /* InvitedInvitation.m in Sources */,
 				9CF5D57D1AE47CA500779ED6 /* AcceptedViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

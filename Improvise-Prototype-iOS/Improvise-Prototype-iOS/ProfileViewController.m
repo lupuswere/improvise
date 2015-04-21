@@ -37,6 +37,7 @@
 - (IBAction)logOutButton:(UIButton *)sender {
     AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     appDelegate.curUsername = @"";
+    appDelegate.invitations = nil;
     [self performSegueWithIdentifier:@"logOutSegue" sender:sender];
 }
 @end

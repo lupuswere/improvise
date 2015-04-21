@@ -46,8 +46,10 @@
 
 - (IBAction)loginButton:(UIButton *)sender {
     self.errorMessageText.text = @"";
+    NSString *usernameText = self.usernameText.text;
+    NSString *passwordText = self.passwordText.text;
     NSError *error;
-    NSString *urlStr = [NSString stringWithFormat:@"%@%@", @"http://improvise.jit.su/login/", self.usernameText.text];
+    NSString *urlStr = [NSString stringWithFormat:@"%@%@", @"http://improvise.jit.su/login/", usernameText];
     NSURL *url = [NSURL URLWithString:urlStr];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     [request setHTTPMethod:@"GET"];
@@ -61,9 +63,25 @@
                                         options: NSJSONReadingMutableContainers
                                           error: &error];
 //        NSLog(@"%@", JSON);
-        if([[JSON objectForKey:@"username"] isEqualToString:self.usernameText.text] && [[JSON objectForKey:@"password"] isEqualToString:self.passwordText.text]) {
+        if([[JSON objectForKey:@"username"] isEqualToString:usernameText] && [[JSON objectForKey:@"password"] isEqualToString:passwordText]) {
             AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
             appDelegate.curUsername = [JSON objectForKey:@"username"];
+            /* Load Accepted Invitations */
+            NSError *error2;
+            NSString *urlStrAcceptedInvitations = [NSString stringWithFormat:@"%@%@", @"http://improvise.jit.su/acceptedInvitations/", usernameText];
+            NSURL *urlAcceptedInvitations = [NSURL URLWithString:urlStrAcceptedInvitations];
+            NSMutableURLRequest *requestAcceptedInvitations = [NSMutableURLRequest requestWithURL:urlAcceptedInvitations];
+            [requestAcceptedInvitations setHTTPMethod:@"GET"];
+            [requestAcceptedInvitations setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+            
+            NSData *dataAcceptedInvitations = [NSURLConnection sendSynchronousRequest:requestAcceptedInvitations returningResponse: nil error:&error2];
+            if(dataAcceptedInvitations) {
+                NSMutableArray *JSONAcceptedInvitations =
+                [NSJSONSerialization JSONObjectWithData: dataAcceptedInvitations
+                                                options: NSJSONReadingMutableContainers
+                                                  error: &error2];
+                NSLog(@"%@", JSONAcceptedInvitations);
+            }
             [self performSegueWithIdentifier:@"logInSegue" sender:sender];
         } else {
             self.errorMessageText.text = @"Wrong username or password.";
@@ -97,7 +115,7 @@
                 NSString *post = [NSString stringWithFormat:@"username=%@&password=%@", usernameText, passwordText];
                 NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
                 
-                NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
+                NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long)[postData length]];
                 NSString *urlStrPOST = [NSString stringWithFormat:@"http://improvise.jit.su/signup"];
                 NSMutableURLRequest *postRequest = [[NSMutableURLRequest alloc] init];
                 [postRequest setURL:[NSURL URLWithString:urlStrPOST]];
@@ -126,4 +144,10 @@
     [self.usernameText resignFirstResponder];
     [self.passwordText resignFirstResponder];
 }
+
+- (IBAction)passwordGo:(UITextField *)sender {
+    [self loginButton:sender];
+}
+
+
 @end

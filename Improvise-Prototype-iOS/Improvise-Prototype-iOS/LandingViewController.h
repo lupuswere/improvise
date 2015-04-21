@@ -15,5 +15,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *passwordText;
 @property (weak, nonatomic) IBOutlet UILabel *errorMessageText;
 - (IBAction)tapOnScreen:(UITapGestureRecognizer *)sender;
+- (IBAction)passwordGo:(UITextField *)sender;
+
 
 @end
