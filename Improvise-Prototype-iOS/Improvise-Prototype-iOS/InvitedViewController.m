@@ -25,6 +25,7 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [self refreshInvitedInvitationsList];
+    [self.invitedInvitationsTableView reloadData];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
