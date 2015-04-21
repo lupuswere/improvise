@@ -10,5 +10,6 @@
 
 @interface ChannelViewController : UIViewController
 - (IBAction)backToChannelsPage:(UIButton *)sender;
-
+@property (weak, nonatomic) IBOutlet UITextField *messageTextField;
+@property (weak, nonatomic) NSString *channelName;
 @end

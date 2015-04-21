@@ -7,15 +7,26 @@
 //
 
 #import "ChannelViewController.h"
-
+#import <SIOSocket/SIOSocket.h>
 @interface ChannelViewController ()
-
+@property (strong, nonatomic) SIOSocket *socket;
+@property BOOL socketIsConnected;
 @end
 
 @implementation ChannelViewController
 
 - (void)viewDidLoad {
+    self.messageTextField.text = self.channelName;
     [super viewDidLoad];
+    //TODO Connect to WebSocket
+    [SIOSocket socketWithHost: @"http://improvise.jit.su" response: ^(SIOSocket *socket) {
+        self.socket = socket;
+    }];
+    __weak typeof(self) weakSelf = self;
+    self.socket.onConnect = ^()
+    {
+        weakSelf.socketIsConnected = YES;
+    };
     // Do any additional setup after loading the view.
 }
 
@@ -35,6 +46,6 @@
 */
 
 - (IBAction)backToChannelsPage:(UIButton *)sender {
-    [self performSegueWithIdentifier:@"sportsBackToChannelsSegue" sender:sender];
+    [self performSegueWithIdentifier:@"backToChannelsSegue" sender:sender];
 }
 @end

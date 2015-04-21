@@ -8,6 +8,7 @@
 
 #import "HomeViewController.h"
 #import "AppDelegate.h"
+#import "ChannelViewController.h"
 @interface HomeViewController ()
 
 @end
@@ -34,5 +35,26 @@
 
 - (IBAction)toSportsChannel:(UIButton *)sender {
     [self performSegueWithIdentifier:@"sportsChannelSegue" sender:sender];
+}
+
+- (IBAction)toDinnerChannel:(UIButton *)sender {
+    [self performSegueWithIdentifier:@"dinnerChannelSegue" sender:sender];
+}
+
+- (IBAction)toMovieChannel:(UIButton *)sender {
+    [self performSegueWithIdentifier:@"movieChannelSegue" sender:sender];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    ChannelViewController *destination = segue.destinationViewController;
+    destination.channelName = @"";
+    if([segue.identifier isEqualToString:@"sportsChannelSegue"]) {
+        destination.channelName = @"sports";
+    } else if([segue.identifier isEqualToString:@"dinnerChannelSegue"]) {
+        destination.channelName = @"dinner";
+    } else if([segue.identifier isEqualToString:@"movieChannelSegue"]) {
+        destination.channelName = @"movie";
+    }
 }
 @end

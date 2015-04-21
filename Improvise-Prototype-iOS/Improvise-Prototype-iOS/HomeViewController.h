@@ -10,6 +10,8 @@
 
 @interface HomeViewController : UIViewController
 - (IBAction)toSportsChannel:(UIButton *)sender;
+- (IBAction)toDinnerChannel:(UIButton *)sender;
+- (IBAction)toMovieChannel:(UIButton *)sender;
 
 
 @end
