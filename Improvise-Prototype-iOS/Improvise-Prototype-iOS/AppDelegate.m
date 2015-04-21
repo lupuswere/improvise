@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "Invitations.h"
 @interface AppDelegate ()
 
 @end
@@ -19,6 +19,7 @@
     if (!(self.curUsername = [NSKeyedUnarchiver unarchiveObjectWithFile:[self curUsernameStorageLocation]])) {
         _curUsername = @"";
     }
+    _invitations = [[Invitations alloc] init];
     // Override point for customization after application launch.
     return YES;
 }
