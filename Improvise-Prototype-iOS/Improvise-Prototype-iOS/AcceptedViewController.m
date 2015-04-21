@@ -61,6 +61,7 @@
     AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     appDelegate.invitations = [[Invitations alloc] init];
     /* Load Invited Invitations */
+    /*
     NSError *error2;
     NSString *urlStrInvitedInvitations = [NSString stringWithFormat:@"%@%@", @"http://improvise.jit.su/invitedInvitations/", appDelegate.curUsername];
     NSURL *urlInvitedInvitations = [NSURL URLWithString:urlStrInvitedInvitations];
@@ -74,7 +75,7 @@
         [NSJSONSerialization JSONObjectWithData: dataInvitedInvitations
                                         options: NSJSONReadingMutableContainers
                                           error: &error2];
-//        NSLog(@"%@", JSONInvitedInvitations);
+        NSLog(@"%@", JSONInvitedInvitations);
         for(id element in JSONInvitedInvitations) {
             InvitedInvitation *invitedInvitation = [[InvitedInvitation alloc] init];
             invitedInvitation.sender = [element objectForKey:@"sender"];
@@ -82,7 +83,7 @@
             invitedInvitation.receiver = [element objectForKey:@"receiver"];
             [appDelegate.invitations.invitedInvitations addObject:invitedInvitation];
         }
-    }
+    }*/
     /* Load Accepted Invitations */
     NSError *error3;
     NSString *urlStrAcceptedInvitations = [NSString stringWithFormat:@"%@%@", @"http://improvise.jit.su/acceptedInvitations/", appDelegate.curUsername];

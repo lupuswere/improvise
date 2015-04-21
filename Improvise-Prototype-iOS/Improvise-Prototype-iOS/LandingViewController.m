@@ -51,75 +51,80 @@
     self.errorMessageText.text = @"";
     NSString *usernameText = self.usernameText.text;
     NSString *passwordText = self.passwordText.text;
-    NSError *error;
-    NSString *urlStr = [NSString stringWithFormat:@"%@%@", @"http://improvise.jit.su/login/", usernameText];
-    NSURL *url = [NSURL URLWithString:urlStr];
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-    [request setHTTPMethod:@"GET"];
-    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    
-    NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse: nil error:&error];
-    if(data) {
-//        NSLog(@"%@", [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]); //Important test code
-        NSDictionary *JSON =
-        [NSJSONSerialization JSONObjectWithData: data
-                                        options: NSJSONReadingMutableContainers
-                                          error: &error];
-//        NSLog(@"%@", JSON);
-        if([[JSON objectForKey:@"username"] isEqualToString:usernameText] && [[JSON objectForKey:@"password"] isEqualToString:passwordText]) {
-            AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
-            appDelegate.curUsername = [JSON objectForKey:@"username"];
-            /* Load Invited Invitations */
-            NSError *error2;
-            NSString *urlStrInvitedInvitations = [NSString stringWithFormat:@"%@%@", @"http://improvise.jit.su/invitedInvitations/", usernameText];
-            NSURL *urlInvitedInvitations = [NSURL URLWithString:urlStrInvitedInvitations];
-            NSMutableURLRequest *requestInvitedInvitations = [NSMutableURLRequest requestWithURL:urlInvitedInvitations];
-            [requestInvitedInvitations setHTTPMethod:@"GET"];
-            [requestInvitedInvitations setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-            
-            NSData *dataInvitedInvitations = [NSURLConnection sendSynchronousRequest:requestInvitedInvitations returningResponse: nil error:&error2];
-            if(dataInvitedInvitations) {
-                NSMutableArray *JSONInvitedInvitations =
-                [NSJSONSerialization JSONObjectWithData: dataInvitedInvitations
-                                                options: NSJSONReadingMutableContainers
-                                                  error: &error2];
-//                NSLog(@"%@", JSONInvitedInvitations);
-                for(id element in JSONInvitedInvitations) {
-                    InvitedInvitation *invitedInvitation = [[InvitedInvitation alloc] init];
-                    invitedInvitation.sender = [element objectForKey:@"sender"];
-                    invitedInvitation.content = [element objectForKey:@"content"];
-                    invitedInvitation.receiver = [element objectForKey:@"receiver"];
-                    [appDelegate.invitations.invitedInvitations addObject:invitedInvitation];
+    if (usernameText && ![usernameText isEqualToString:@""] && passwordText && ![passwordText isEqualToString:@""]) {
+        NSError *error;
+        NSString *urlStr = [NSString stringWithFormat:@"%@%@", @"http://improvise.jit.su/login/", usernameText];
+        NSURL *url = [NSURL URLWithString:urlStr];
+        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+        [request setHTTPMethod:@"GET"];
+        [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+        
+        NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse: nil error:&error];
+        if(data) {
+            //        NSLog(@"%@", [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]); //Important test code
+            NSDictionary *JSON =
+            [NSJSONSerialization JSONObjectWithData: data
+                                            options: NSJSONReadingMutableContainers
+                                              error: &error];
+            //        NSLog(@"%@", JSON);
+            if([[JSON objectForKey:@"username"] isEqualToString:usernameText] && [[JSON objectForKey:@"password"] isEqualToString:passwordText]) {
+                AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+                appDelegate.curUsername = [JSON objectForKey:@"username"];
+                /* Load Invited Invitations */
+                NSError *error2;
+                NSString *urlStrInvitedInvitations = [NSString stringWithFormat:@"%@%@", @"http://improvise.jit.su/invitedInvitations/", usernameText];
+                NSURL *urlInvitedInvitations = [NSURL URLWithString:urlStrInvitedInvitations];
+                NSMutableURLRequest *requestInvitedInvitations = [NSMutableURLRequest requestWithURL:urlInvitedInvitations];
+                [requestInvitedInvitations setHTTPMethod:@"GET"];
+                [requestInvitedInvitations setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+                
+                NSData *dataInvitedInvitations = [NSURLConnection sendSynchronousRequest:requestInvitedInvitations returningResponse: nil error:&error2];
+                if(dataInvitedInvitations) {
+                    NSMutableArray *JSONInvitedInvitations =
+                    [NSJSONSerialization JSONObjectWithData: dataInvitedInvitations
+                                                    options: NSJSONReadingMutableContainers
+                                                      error: &error2];
+                    //                NSLog(@"%@", JSONInvitedInvitations);
+                    for(id element in JSONInvitedInvitations) {
+                        InvitedInvitation *invitedInvitation = [[InvitedInvitation alloc] init];
+                        invitedInvitation.sender = [element objectForKey:@"sender"];
+                        invitedInvitation.content = [element objectForKey:@"content"];
+                        invitedInvitation.receiver = [element objectForKey:@"receiver"];
+                        [appDelegate.invitations.invitedInvitations addObject:invitedInvitation];
+                    }
                 }
-            }
-            /* Load Accepted Invitations */
-            NSError *error3;
-            NSString *urlStrAcceptedInvitations = [NSString stringWithFormat:@"%@%@", @"http://improvise.jit.su/acceptedInvitations/", usernameText];
-            NSURL *urlAcceptedInvitations = [NSURL URLWithString:urlStrAcceptedInvitations];
-            NSMutableURLRequest *requestAcceptedInvitations = [NSMutableURLRequest requestWithURL:urlAcceptedInvitations];
-            [requestAcceptedInvitations setHTTPMethod:@"GET"];
-            [requestAcceptedInvitations setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-            
-            NSData *dataAcceptedInvitations = [NSURLConnection sendSynchronousRequest:requestAcceptedInvitations returningResponse: nil error:&error3];
-            if(dataAcceptedInvitations) {
-                NSMutableArray *JSONAcceptedInvitations =
-                [NSJSONSerialization JSONObjectWithData: dataAcceptedInvitations
-                                                options: NSJSONReadingMutableContainers
-                                                  error: &error3];
-//                NSLog(@"%@", JSONAcceptedInvitations);
-                for(id element in JSONAcceptedInvitations) {
-                    AcceptedInvitation *acceptedInvitation = [[AcceptedInvitation alloc] init];
-                    acceptedInvitation.sender = [element objectForKey:@"sender"];
-                    acceptedInvitation.content = [element objectForKey:@"content"];
-                    acceptedInvitation.receiver = [element objectForKey:@"receiver"];
-                    [appDelegate.invitations.acceptedInvitations addObject:acceptedInvitation];
+                /* Load Accepted Invitations */
+                NSError *error3;
+                NSString *urlStrAcceptedInvitations = [NSString stringWithFormat:@"%@%@", @"http://improvise.jit.su/acceptedInvitations/", usernameText];
+                NSURL *urlAcceptedInvitations = [NSURL URLWithString:urlStrAcceptedInvitations];
+                NSMutableURLRequest *requestAcceptedInvitations = [NSMutableURLRequest requestWithURL:urlAcceptedInvitations];
+                [requestAcceptedInvitations setHTTPMethod:@"GET"];
+                [requestAcceptedInvitations setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+                
+                NSData *dataAcceptedInvitations = [NSURLConnection sendSynchronousRequest:requestAcceptedInvitations returningResponse: nil error:&error3];
+                if(dataAcceptedInvitations) {
+                    NSMutableArray *JSONAcceptedInvitations =
+                    [NSJSONSerialization JSONObjectWithData: dataAcceptedInvitations
+                                                    options: NSJSONReadingMutableContainers
+                                                      error: &error3];
+                    //                NSLog(@"%@", JSONAcceptedInvitations);
+                    for(id element in JSONAcceptedInvitations) {
+                        AcceptedInvitation *acceptedInvitation = [[AcceptedInvitation alloc] init];
+                        acceptedInvitation.sender = [element objectForKey:@"sender"];
+                        acceptedInvitation.content = [element objectForKey:@"content"];
+                        acceptedInvitation.receiver = [element objectForKey:@"receiver"];
+                        [appDelegate.invitations.acceptedInvitations addObject:acceptedInvitation];
+                    }
                 }
+                [self performSegueWithIdentifier:@"logInSegue" sender:sender];
+            } else {
+                self.errorMessageText.text = @"Wrong username or password.";
             }
-            [self performSegueWithIdentifier:@"logInSegue" sender:sender];
-        } else {
-            self.errorMessageText.text = @"Wrong username or password.";
         }
+    } else {
+        self.errorMessageText.text = @"Username or password is empty!";
     }
+    
 }
 
 - (IBAction)signupButton:(UIButton *)sender {
