@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9CF5D54E1AE47B8C00779ED6"
-               BuildableName = "Improvise-Prototype-iOS.app"
-               BlueprintName = "Improvise-Prototype-iOS"
-               ReferencedContainer = "container:Improvise-Prototype-iOS.xcodeproj">
+               BuildableName = "Improvise.app"
+               BlueprintName = "Improvise"
+               ReferencedContainer = "container:Improvise.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9CF5D56A1AE47B8C00779ED6"
-               BuildableName = "Improvise-Prototype-iOSTests.xctest"
-               BlueprintName = "Improvise-Prototype-iOSTests"
-               ReferencedContainer = "container:Improvise-Prototype-iOS.xcodeproj">
+               BuildableName = "ImproviseTests.xctest"
+               BlueprintName = "ImproviseTests"
+               ReferencedContainer = "container:Improvise.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,9 +47,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9CF5D56A1AE47B8C00779ED6"
-               BuildableName = "Improvise-Prototype-iOSTests.xctest"
-               BlueprintName = "Improvise-Prototype-iOSTests"
-               ReferencedContainer = "container:Improvise-Prototype-iOS.xcodeproj">
+               BuildableName = "ImproviseTests.xctest"
+               BlueprintName = "ImproviseTests"
+               ReferencedContainer = "container:Improvise.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -57,9 +57,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9CF5D54E1AE47B8C00779ED6"
-            BuildableName = "Improvise-Prototype-iOS.app"
-            BlueprintName = "Improvise-Prototype-iOS"
-            ReferencedContainer = "container:Improvise-Prototype-iOS.xcodeproj">
+            BuildableName = "Improvise.app"
+            BlueprintName = "Improvise"
+            ReferencedContainer = "container:Improvise.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -77,9 +77,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9CF5D54E1AE47B8C00779ED6"
-            BuildableName = "Improvise-Prototype-iOS.app"
-            BlueprintName = "Improvise-Prototype-iOS"
-            ReferencedContainer = "container:Improvise-Prototype-iOS.xcodeproj">
+            BuildableName = "Improvise.app"
+            BlueprintName = "Improvise"
+            ReferencedContainer = "container:Improvise.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -96,9 +96,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9CF5D54E1AE47B8C00779ED6"
-            BuildableName = "Improvise-Prototype-iOS.app"
-            BlueprintName = "Improvise-Prototype-iOS"
-            ReferencedContainer = "container:Improvise-Prototype-iOS.xcodeproj">
+            BuildableName = "Improvise.app"
+            BlueprintName = "Improvise"
+            ReferencedContainer = "container:Improvise.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

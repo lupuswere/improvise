@@ -9,8 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface HomeViewController : UIViewController
+- (IBAction)toSportsChannel:(UIButton *)sender;
 
-@property (weak, nonatomic) IBOutlet UILabel *testLabel;
 
 @end
 

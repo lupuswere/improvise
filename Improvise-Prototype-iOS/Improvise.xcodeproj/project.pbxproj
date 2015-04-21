@@ -12,6 +12,7 @@
 		9C0B3C991AE5C63500BA57A8 /* InvitedInvitation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C0B3C981AE5C63500BA57A8 /* InvitedInvitation.m */; };
 		9C0B3C9C1AE5C66F00BA57A8 /* Invitations.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C0B3C9B1AE5C66F00BA57A8 /* Invitations.m */; };
 		9C0B3C9F1AE62E9C00BA57A8 /* NewAcceptedInvitation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C0B3C9E1AE62E9C00BA57A8 /* NewAcceptedInvitation.m */; };
+		9C0B3CA21AE63EF700BA57A8 /* ChannelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C0B3CA11AE63EF700BA57A8 /* ChannelViewController.m */; };
 		9CF5D5551AE47B8C00779ED6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CF5D5541AE47B8C00779ED6 /* main.m */; };
 		9CF5D5581AE47B8C00779ED6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CF5D5571AE47B8C00779ED6 /* AppDelegate.m */; };
 		9CF5D55B1AE47B8C00779ED6 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CF5D55A1AE47B8C00779ED6 /* HomeViewController.m */; };
@@ -45,7 +46,9 @@
 		9C0B3C9B1AE5C66F00BA57A8 /* Invitations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Invitations.m; path = Models/Invitations.m; sourceTree = "<group>"; };
 		9C0B3C9D1AE62E9C00BA57A8 /* NewAcceptedInvitation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewAcceptedInvitation.h; path = Models/NewAcceptedInvitation.h; sourceTree = "<group>"; };
 		9C0B3C9E1AE62E9C00BA57A8 /* NewAcceptedInvitation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewAcceptedInvitation.m; path = Models/NewAcceptedInvitation.m; sourceTree = "<group>"; };
-		9CF5D54F1AE47B8C00779ED6 /* Improvise-Prototype-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Improvise-Prototype-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C0B3CA01AE63EF700BA57A8 /* ChannelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChannelViewController.h; sourceTree = "<group>"; };
+		9C0B3CA11AE63EF700BA57A8 /* ChannelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChannelViewController.m; sourceTree = "<group>"; };
+		9CF5D54F1AE47B8C00779ED6 /* Improvise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Improvise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CF5D5531AE47B8C00779ED6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9CF5D5541AE47B8C00779ED6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9CF5D5561AE47B8C00779ED6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -57,7 +60,7 @@
 		9CF5D5601AE47B8C00779ED6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9CF5D5621AE47B8C00779ED6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		9CF5D5651AE47B8C00779ED6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		9CF5D56B1AE47B8C00779ED6 /* Improvise-Prototype-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Improvise-Prototype-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9CF5D56B1AE47B8C00779ED6 /* ImproviseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImproviseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CF5D5701AE47B8C00779ED6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9CF5D5711AE47B8C00779ED6 /* Improvise_Prototype_iOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Improvise_Prototype_iOSTests.m; sourceTree = "<group>"; };
 		9CF5D57B1AE47CA500779ED6 /* AcceptedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AcceptedViewController.h; sourceTree = "<group>"; };
@@ -123,8 +126,8 @@
 		9CF5D5501AE47B8C00779ED6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9CF5D54F1AE47B8C00779ED6 /* Improvise-Prototype-iOS.app */,
-				9CF5D56B1AE47B8C00779ED6 /* Improvise-Prototype-iOSTests.xctest */,
+				9CF5D54F1AE47B8C00779ED6 /* Improvise.app */,
+				9CF5D56B1AE47B8C00779ED6 /* ImproviseTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -139,6 +142,8 @@
 				9CF5D5891AE498C200779ED6 /* LandingViewController.m */,
 				9CF5D5591AE47B8C00779ED6 /* HomeViewController.h */,
 				9CF5D55A1AE47B8C00779ED6 /* HomeViewController.m */,
+				9C0B3CA01AE63EF700BA57A8 /* ChannelViewController.h */,
+				9C0B3CA11AE63EF700BA57A8 /* ChannelViewController.m */,
 				9CF5D55C1AE47B8C00779ED6 /* InvitedViewController.h */,
 				9CF5D55D1AE47B8C00779ED6 /* InvitedViewController.m */,
 				9CF5D57B1AE47CA500779ED6 /* AcceptedViewController.h */,
@@ -199,9 +204,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9CF5D54E1AE47B8C00779ED6 /* Improvise-Prototype-iOS */ = {
+		9CF5D54E1AE47B8C00779ED6 /* Improvise */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9CF5D5751AE47B8C00779ED6 /* Build configuration list for PBXNativeTarget "Improvise-Prototype-iOS" */;
+			buildConfigurationList = 9CF5D5751AE47B8C00779ED6 /* Build configuration list for PBXNativeTarget "Improvise" */;
 			buildPhases = (
 				3AF48FA4D301DE80AFF7F2B3 /* Check Pods Manifest.lock */,
 				9CF5D54B1AE47B8C00779ED6 /* Sources */,
@@ -213,14 +218,14 @@
 			);
 			dependencies = (
 			);
-			name = "Improvise-Prototype-iOS";
+			name = Improvise;
 			productName = "Improvise-Prototype-iOS";
-			productReference = 9CF5D54F1AE47B8C00779ED6 /* Improvise-Prototype-iOS.app */;
+			productReference = 9CF5D54F1AE47B8C00779ED6 /* Improvise.app */;
 			productType = "com.apple.product-type.application";
 		};
-		9CF5D56A1AE47B8C00779ED6 /* Improvise-Prototype-iOSTests */ = {
+		9CF5D56A1AE47B8C00779ED6 /* ImproviseTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9CF5D5781AE47B8C00779ED6 /* Build configuration list for PBXNativeTarget "Improvise-Prototype-iOSTests" */;
+			buildConfigurationList = 9CF5D5781AE47B8C00779ED6 /* Build configuration list for PBXNativeTarget "ImproviseTests" */;
 			buildPhases = (
 				9CF5D5671AE47B8C00779ED6 /* Sources */,
 				9CF5D5681AE47B8C00779ED6 /* Frameworks */,
@@ -231,9 +236,9 @@
 			dependencies = (
 				9CF5D56D1AE47B8C00779ED6 /* PBXTargetDependency */,
 			);
-			name = "Improvise-Prototype-iOSTests";
+			name = ImproviseTests;
 			productName = "Improvise-Prototype-iOSTests";
-			productReference = 9CF5D56B1AE47B8C00779ED6 /* Improvise-Prototype-iOSTests.xctest */;
+			productReference = 9CF5D56B1AE47B8C00779ED6 /* ImproviseTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -254,7 +259,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 9CF5D54A1AE47B8C00779ED6 /* Build configuration list for PBXProject "Improvise-Prototype-iOS" */;
+			buildConfigurationList = 9CF5D54A1AE47B8C00779ED6 /* Build configuration list for PBXProject "Improvise" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -267,8 +272,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9CF5D54E1AE47B8C00779ED6 /* Improvise-Prototype-iOS */,
-				9CF5D56A1AE47B8C00779ED6 /* Improvise-Prototype-iOSTests */,
+				9CF5D54E1AE47B8C00779ED6 /* Improvise */,
+				9CF5D56A1AE47B8C00779ED6 /* ImproviseTests */,
 			);
 		};
 /* End PBXProject section */
@@ -341,6 +346,7 @@
 				9CF5D55B1AE47B8C00779ED6 /* HomeViewController.m in Sources */,
 				9CF5D5551AE47B8C00779ED6 /* main.m in Sources */,
 				9CF5D5801AE47CBA00779ED6 /* ProfileViewController.m in Sources */,
+				9C0B3CA21AE63EF700BA57A8 /* ChannelViewController.m in Sources */,
 				9C0B3C991AE5C63500BA57A8 /* InvitedInvitation.m in Sources */,
 				9CF5D57D1AE47CA500779ED6 /* AcceptedViewController.m in Sources */,
 			);
@@ -359,7 +365,7 @@
 /* Begin PBXTargetDependency section */
 		9CF5D56D1AE47B8C00779ED6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 9CF5D54E1AE47B8C00779ED6 /* Improvise-Prototype-iOS */;
+			target = 9CF5D54E1AE47B8C00779ED6 /* Improvise */;
 			targetProxy = 9CF5D56C1AE47B8C00779ED6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -471,7 +477,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Improvise-Prototype-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Improvise;
 			};
 			name = Debug;
 		};
@@ -482,7 +488,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Improvise-Prototype-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Improvise;
 			};
 			name = Release;
 		};
@@ -500,7 +506,7 @@
 				);
 				INFOPLIST_FILE = "Improvise-Prototype-iOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ImproviseTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Improvise-Prototype-iOS.app/Improvise-Prototype-iOS";
 			};
 			name = Debug;
@@ -515,7 +521,7 @@
 				);
 				INFOPLIST_FILE = "Improvise-Prototype-iOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ImproviseTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Improvise-Prototype-iOS.app/Improvise-Prototype-iOS";
 			};
 			name = Release;
@@ -523,7 +529,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9CF5D54A1AE47B8C00779ED6 /* Build configuration list for PBXProject "Improvise-Prototype-iOS" */ = {
+		9CF5D54A1AE47B8C00779ED6 /* Build configuration list for PBXProject "Improvise" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9CF5D5731AE47B8C00779ED6 /* Debug */,
@@ -532,7 +538,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9CF5D5751AE47B8C00779ED6 /* Build configuration list for PBXNativeTarget "Improvise-Prototype-iOS" */ = {
+		9CF5D5751AE47B8C00779ED6 /* Build configuration list for PBXNativeTarget "Improvise" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9CF5D5761AE47B8C00779ED6 /* Debug */,
@@ -541,7 +547,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9CF5D5781AE47B8C00779ED6 /* Build configuration list for PBXNativeTarget "Improvise-Prototype-iOSTests" */ = {
+		9CF5D5781AE47B8C00779ED6 /* Build configuration list for PBXNativeTarget "ImproviseTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9CF5D5791AE47B8C00779ED6 /* Debug */,

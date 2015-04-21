@@ -15,11 +15,6 @@
 @implementation HomeViewController
 
 - (void)viewDidLoad {
-    //Test Code
-    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
-    if(appDelegate.curUsername) {
-        self.testLabel.text = appDelegate.curUsername;
-    }
     [self setNavBarNames];
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
@@ -37,4 +32,7 @@
     [[self.tabBarController.viewControllers objectAtIndex:3] setTitle:@"Profile"];
 }
 
+- (IBAction)toSportsChannel:(UIButton *)sender {
+    [self performSegueWithIdentifier:@"sportsChannelSegue" sender:sender];
+}
 @end
