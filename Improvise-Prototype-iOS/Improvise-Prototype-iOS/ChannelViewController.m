@@ -13,6 +13,7 @@
 @interface ChannelViewController ()
 @property BOOL established;
 @property (strong, nonatomic) NSString *actualChannel;
+@property (strong, nonatomic) NSMutableDictionary *acceptedRecords;
 @end
 
 @implementation ChannelViewController
@@ -21,6 +22,9 @@
 //    self.messageTextField.text = self.channelName;
     if ([self.channelName isEqualToString:@"sports"]) {
         self.actualChannel = @"message";
+    }
+    if (!self.acceptedRecords) {
+        self.acceptedRecords = [[NSMutableDictionary alloc] init];
     }
     [super viewDidLoad];
     if(!self.messageList) {
@@ -43,7 +47,7 @@
              message.msgType = [messageDict objectForKey:@"msgType"];
              message.text = [messageDict objectForKey:@"text"];
              if(message.msgType && [message.msgType isEqualToString:@"acceptance"]) {
-                 
+                 //TODO
              } else {
                  [self.messageList addObject:message];
              }
@@ -78,9 +82,51 @@
     Message *newMessage = [self.messageList objectAtIndex:row];
     cell.textLabel.text = newMessage.text;
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%@%@", @"from:", newMessage.author];
+    NSString *indexPathStr = [NSString stringWithFormat:@"%@", indexPath];
+    if([self.acceptedRecords objectForKey:indexPathStr]) {
+        [cell setBackgroundColor:[UIColor colorWithRed:2 green:.8 blue:.2 alpha:1]];
+    }
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *theCell = [tableView cellForRowAtIndexPath:indexPath];
+    /* SubString */
+    NSString *haystack = theCell.detailTextLabel.text;
+    NSString *prefix = @"from:";
+    NSString *suffix = @"";
+    NSRange needleRange = NSMakeRange(prefix.length,
+                                      haystack.length - prefix.length - suffix.length);
+    NSString *author = [haystack substringWithRange:needleRange];
+    /**/
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    if(![appDelegate.curUsername isEqualToString:author]) {
+        NSString *msg = [NSString stringWithFormat: @"%@%@", @"ACCEPTED! ", author];
+        NSError *postError;
+        NSString *post = [NSString stringWithFormat:@"sender=%@&content=%@&receiver=%@", author, theCell.textLabel.text, appDelegate.curUsername];
+        NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+        
+        NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long)[postData length]];
+        NSString *urlStrPOST = [NSString stringWithFormat:@"http://improvise.jit.su/invitations"];
+        NSMutableURLRequest *postRequest = [[NSMutableURLRequest alloc] init];
+        [postRequest setURL:[NSURL URLWithString:urlStrPOST]];
+        [postRequest setHTTPMethod:@"POST"];
+        [postRequest setValue:postLength forHTTPHeaderField:@"Content-Length"];
+        [postRequest setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+        [postRequest setHTTPBody:postData];
+        NSData *dataPOSTed = [NSURLConnection sendSynchronousRequest:postRequest returningResponse: nil error:&postError];
+        if(dataPOSTed) {
+            [self.acceptedRecords setObject:@"YES" forKey:[NSString stringWithFormat:@"%@", indexPath]];
+            [theCell setBackgroundColor:[UIColor colorWithRed:.2 green:.0 blue:.2 alpha:0.4]];
+        } else {
+            NSLog(@"Unknown Error: %@", postError);
+        }
+        [self establishConnection];
+        [self.socket emit: self.actualChannel args: @[
+                                                      msg
+                                                      ]];
+    }
+}
 
 /*
 #pragma mark - Navigation
