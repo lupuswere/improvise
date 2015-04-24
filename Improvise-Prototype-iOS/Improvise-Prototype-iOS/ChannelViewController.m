@@ -82,10 +82,10 @@
     Message *newMessage = [self.messageList objectAtIndex:row];
     cell.textLabel.text = newMessage.text;
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%@%@", @"from:", newMessage.author];
-    NSString *indexPathStr = [NSString stringWithFormat:@"%@", indexPath];
-    if([self.acceptedRecords objectForKey:indexPathStr]) {
-        [cell setBackgroundColor:[UIColor colorWithRed:2 green:.8 blue:.2 alpha:1]];
-    }
+//    NSString *indexPathStr = [NSString stringWithFormat:@"%@", indexPath];
+//    if([self.acceptedRecords objectForKey:indexPathStr]) {
+//        [cell setBackgroundColor:[UIColor colorWithRed:2 green:.8 blue:.2 alpha:1]];
+//    }
     return cell;
 }
 
@@ -100,7 +100,7 @@
     NSString *author = [haystack substringWithRange:needleRange];
     /**/
     AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
-    if(![appDelegate.curUsername isEqualToString:author]) {
+    if(![appDelegate.curUsername isEqualToString:author] && ![self.acceptedRecords objectForKey:[NSString stringWithFormat:@"%@ %@", theCell.textLabel.text, theCell.detailTextLabel.text]]) {
         NSString *msg = [NSString stringWithFormat: @"%@%@", @"ACCEPTED! ", author];
         NSError *postError;
         NSString *post = [NSString stringWithFormat:@"sender=%@&content=%@&receiver=%@", author, theCell.textLabel.text, appDelegate.curUsername];
@@ -116,7 +116,7 @@
         [postRequest setHTTPBody:postData];
         NSData *dataPOSTed = [NSURLConnection sendSynchronousRequest:postRequest returningResponse: nil error:&postError];
         if(dataPOSTed) {
-            [self.acceptedRecords setObject:@"YES" forKey:[NSString stringWithFormat:@"%@", indexPath]];
+            [self.acceptedRecords setObject:@"YES" forKey:[NSString stringWithFormat:@"%@ %@", theCell.textLabel.text, theCell.detailTextLabel.text]];
             [theCell setBackgroundColor:[UIColor colorWithRed:.2 green:.0 blue:.2 alpha:0.4]];
         } else {
             NSLog(@"Unknown Error: %@", postError);
