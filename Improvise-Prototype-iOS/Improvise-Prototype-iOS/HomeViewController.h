@@ -12,6 +12,7 @@
 - (IBAction)toSportsChannel:(UIButton *)sender;
 - (IBAction)toDinnerChannel:(UIButton *)sender;
 - (IBAction)toMovieChannel:(UIButton *)sender;
+- (IBAction)clearAllInvitations:(UIButton *)sender;
 
 
 @end

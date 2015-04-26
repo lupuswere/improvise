@@ -45,6 +45,46 @@
     [self performSegueWithIdentifier:@"movieChannelSegue" sender:sender];
 }
 
+- (IBAction)clearAllInvitations:(UIButton *)sender {
+    [self clearAcceptedInvitations];
+    [self clearInvitedInvitations];
+}
+
+- (void)clearAcceptedInvitations
+{
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    NSError *deleteError;
+    NSString *urlStrDELETE = [NSString stringWithFormat:@"%@%@",@"http://improvise.jit.su/acceptedInvitations/", appDelegate.curUsername];
+    NSMutableURLRequest *deleteRequest = [[NSMutableURLRequest alloc] init];
+    [deleteRequest setURL:[NSURL URLWithString:urlStrDELETE]];
+    [deleteRequest setHTTPMethod:@"DELETE"];
+    [deleteRequest setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    NSData *dataDELETEd = [NSURLConnection sendSynchronousRequest:deleteRequest returningResponse: nil error:&deleteError];
+    if(dataDELETEd) {
+        //TODO
+    } else {
+        NSLog(@"Unknown error.");
+    }
+}
+
+- (void)clearInvitedInvitations
+{
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    NSError *deleteError;
+    NSString *urlStrDELETE = [NSString stringWithFormat:@"%@%@",@"http://improvise.jit.su/invitedInvitations/", appDelegate.curUsername];
+    NSMutableURLRequest *deleteRequest = [[NSMutableURLRequest alloc] init];
+    [deleteRequest setURL:[NSURL URLWithString:urlStrDELETE]];
+    [deleteRequest setHTTPMethod:@"DELETE"];
+    [deleteRequest setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    NSData *dataDELETEd = [NSURLConnection sendSynchronousRequest:deleteRequest returningResponse: nil error:&deleteError];
+    if(dataDELETEd) {
+        //TODO
+    } else {
+        NSLog(@"Unknown error.");
+    }
+    
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     ChannelViewController *destination = segue.destinationViewController;

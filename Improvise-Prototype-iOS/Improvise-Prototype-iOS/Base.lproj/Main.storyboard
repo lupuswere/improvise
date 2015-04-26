@@ -138,6 +138,17 @@
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wmz-aX-39b">
                                 <rect key="frame" x="255" y="176" width="51" height="31"/>
                             </switch>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VEB-gN-z5d">
+                                <rect key="frame" x="0.0" y="473" width="320" height="46"/>
+                                <color key="backgroundColor" red="0.95051801302748584" green="0.95006740650933241" blue="0.95709325396825395" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Clear all invitations">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="clearAllInvitations:" destination="9pv-A4-QxB" eventType="touchUpInside" id="eKt-4n-UL4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
