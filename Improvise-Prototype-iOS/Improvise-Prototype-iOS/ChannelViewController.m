@@ -190,4 +190,7 @@
         }
     }
 }
+- (IBAction)tapOnScreen:(UITapGestureRecognizer *)sender {
+    [self.messageTextField resignFirstResponder];
+}
 @end

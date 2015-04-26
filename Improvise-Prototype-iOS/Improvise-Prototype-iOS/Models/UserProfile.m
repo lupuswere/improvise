@@ -13,7 +13,12 @@
 {
     if (self = [super init]) {
         _username = @"";
-        _password = @"";
+        _gender = @"";
+        _address = @"";
+        _city = @"";
+        _province = @"";
+        _zipCode = @"";
+        _hobby = @"";
     }
     return self;
 }

@@ -13,6 +13,7 @@
 - (IBAction)sendMessageButton:(UIButton *)sender;
 @property (weak, nonatomic) IBOutlet UITextField *messageTextField;
 @property (weak, nonatomic) IBOutlet UIButton *sendMessageButtonProperty;
+- (IBAction)tapOnScreen:(UITapGestureRecognizer *)sender;
 
 @property (weak, nonatomic) NSString *channelName;
 @property (weak, nonatomic) IBOutlet UITableView *messageTableView;
