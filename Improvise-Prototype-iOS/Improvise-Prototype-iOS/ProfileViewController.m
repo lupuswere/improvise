@@ -129,7 +129,7 @@
     if(userProfileDict && [userProfileDict count] != 0) {
         //PUT
         NSError *putError;
-        NSString *put = [NSString stringWithFormat:@"gender=%@&address=%@&city=%@&province=%@&zipCode=%@&country=%@&hobby=%@", self.genderTextField.text, self.addressTextField.text, self.cityTextField.text, self.provinceTextField.text, self.zipCodeTextField.text, self.countryTextField.text, self.hobbyTextField.text];
+        NSString *put = [NSString stringWithFormat:@"id=%@&gender=%@&address=%@&city=%@&province=%@&zipCode=%@&country=%@&hobby=%@", self.profileId, self.genderTextField.text, self.addressTextField.text, self.cityTextField.text, self.provinceTextField.text, self.zipCodeTextField.text, self.countryTextField.text, self.hobbyTextField.text];
         NSData *putData = [put dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
         NSString *putLength = [NSString stringWithFormat:@"%lu", (unsigned long)[putData length]];
         NSString *urlStrPUT = [NSString stringWithFormat:@"%@%@", @"http://improvise.jit.su/profile/", appDelegate.curUsername];
