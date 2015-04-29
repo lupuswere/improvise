@@ -7,16 +7,50 @@
 //
 
 #import "HomeViewController.h"
+#import <SIOSocket/SIOSocket.h>
 #import "AppDelegate.h"
 #import "ChannelViewController.h"
+#import "Message.h"
 @interface HomeViewController ()
-
+@property BOOL established;
+@property BOOL *sportsChannelOpen; //Just For Prototyping
+@property (strong, nonatomic) NSMutableArray *sportsMessages;
 @end
 
 @implementation HomeViewController
 
 - (void)viewDidLoad {
     [self setNavBarNames];
+    if(!self.sportsMessages) {
+        self.sportsMessages = [[NSMutableArray alloc] init];
+    }
+    self.sportsMessageCountLabel.text = @"0";
+    self.dinnerMessageCountLabel.text = @"0";
+    self.movieMessageCountLabel.text = @"0";
+    [SIOSocket socketWithHost: @"http://improvise.jit.su" response: ^(SIOSocket *socket) {
+        self.socket = socket;
+        __weak typeof(self) weakSelf = self;
+        self.socket.onConnect = ^()
+        {
+            weakSelf.socketIsConnected = YES;
+        };
+        [self.socket on: @"message" callback: ^(SIOParameterArray *args)
+         {
+             //             NSString *messageStr = [args firstObject];
+             NSDictionary *messageDict = [args firstObject];
+             Message *message = [[Message alloc] init];
+             message.author = [messageDict objectForKey:@"author"];
+             message.msgType = [messageDict objectForKey:@"msgType"];
+             message.text = [messageDict objectForKey:@"text"];
+             if(message.msgType && [message.msgType isEqualToString:@"acceptance"]) {
+                 //TODO
+             } else {
+                 [self.sportsMessages addObject:message];
+             }
+             [self updateSportsChannelCount];
+         }];
+        [self establishConnection];
+    }];
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 }
@@ -24,6 +58,10 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)updateSportsChannelCount {
+    self.sportsMessageCountLabel.text = [NSString stringWithFormat:@"%lu", (unsigned long)[self.sportsMessages count]];
 }
 
 - (void)setNavBarNames {
@@ -95,6 +133,35 @@
         destination.channelName = @"dinner";
     } else if([segue.identifier isEqualToString:@"movieChannelSegue"]) {
         destination.channelName = @"movie";
+    }
+    destination.messageList = self.sportsMessages;
+}
+
+- (void)establishConnection
+{
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    if(!self.established) {
+        if(self.socketIsConnected && self.sportsChannelOpen) {
+            [self.socket emit: @"message" args: @[
+                                                          [NSString stringWithFormat: @"%@", appDelegate.curUsername]
+                                                          ]];
+            self.established = YES;
+        } else {
+            if(self.sportsChannelOpen) {
+                [SIOSocket socketWithHost: @"http://improvise.jit.su" response: ^(SIOSocket *socket) {
+                    self.socket = socket;
+                    __weak typeof(self) weakSelf = self;
+                    self.socket.onConnect = ^()
+                    {
+                        weakSelf.socketIsConnected = YES;
+                    };
+                    [self.socket emit: @"message" args: @[
+                                                                  [NSString stringWithFormat: @"%@", appDelegate.curUsername]
+                                                                  ]];
+                }];
+                self.established = YES;
+            }
+        }
     }
 }
 @end

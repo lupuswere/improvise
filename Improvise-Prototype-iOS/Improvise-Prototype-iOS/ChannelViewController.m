@@ -55,7 +55,7 @@
          }];
         [self establishConnection];
     }];
-    
+    [self.messageTableView reloadData];
     // Do any additional setup after loading the view.
 }
 
