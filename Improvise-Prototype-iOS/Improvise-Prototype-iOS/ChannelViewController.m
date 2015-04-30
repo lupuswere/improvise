@@ -49,8 +49,9 @@
              if(message.msgType && [message.msgType isEqualToString:@"acceptance"]) {
                  //TODO
              } else {
-                 [self.messageList addObject:message];
+//                 [self.messageList addObject:message];
              }
+             NSLog(@"!!!!!!!!!!!!!!!!!NOW THE COUNT IS!!!!!!!!!!! %lu", (unsigned long)[self.messageList count]);
              [self.messageTableView reloadData];
          }];
         [self establishConnection];
