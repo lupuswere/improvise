@@ -97,6 +97,7 @@
     [self.addressTextField resignFirstResponder];
     [self.cityTextField resignFirstResponder];
     [self.provinceTextField resignFirstResponder];
+    [self.countryTextField resignFirstResponder];
     [self.zipCodeTextField resignFirstResponder];
     [self.hobbyTextField resignFirstResponder];
 }

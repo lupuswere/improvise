@@ -13,6 +13,6 @@
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) NSString *curUsername;
 @property (strong, nonatomic) Invitations *invitations;
-
+@property (strong, nonatomic) NSMutableArray *tmp;
 @end
 

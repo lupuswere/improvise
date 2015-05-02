@@ -20,6 +20,7 @@
 @implementation HomeViewController
 
 - (void)viewDidLoad {
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     [self setNavBarNames];
     if(!self.sportsMessages) {
         self.sportsMessages = [[NSMutableArray alloc] init];
@@ -46,6 +47,7 @@
                  //TODO
              } else {
                  [self.sportsMessages addObject:message];
+                 [appDelegate.tmp addObject:message];
              }
              [self updateSportsChannelCount];
          }];
@@ -134,7 +136,7 @@
     } else if([segue.identifier isEqualToString:@"movieChannelSegue"]) {
         destination.channelName = @"movie";
     }
-    destination.messageList = self.sportsMessages;
+//    destination.messageList = self.sportsMessages;
 }
 
 - (void)establishConnection

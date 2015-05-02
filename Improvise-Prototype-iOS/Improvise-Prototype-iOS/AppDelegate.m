@@ -24,7 +24,12 @@
     if (!(self.curUsername = [NSKeyedUnarchiver unarchiveObjectWithFile:[self curUsernameStorageLocation]])) {
         _curUsername = @"";
     }
-    _invitations = [[Invitations alloc] init];
+    if (!_invitations) {
+        _invitations = [[Invitations alloc] init];
+    }
+    if(!_tmp) {
+        _tmp = [[NSMutableArray alloc] init];
+    }
     // Override point for customization after application launch.
     return YES;
 }

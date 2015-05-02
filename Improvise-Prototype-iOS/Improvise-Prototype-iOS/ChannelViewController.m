@@ -27,8 +27,12 @@
         self.acceptedRecords = [[NSMutableDictionary alloc] init];
     }
     [super viewDidLoad];
-    if(!self.messageList) {
-        self.messageList = [[NSMutableArray alloc] init];
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    self.messageList = [[NSMutableArray alloc] init];
+    if(appDelegate.tmp) {
+        for(Message *message in appDelegate.tmp) {
+            [self.messageList addObject:message];
+        }
     }
     //TODO Connect to WebSocket
     [SIOSocket socketWithHost: @"http://improvise.jit.su" response: ^(SIOSocket *socket) {
@@ -49,9 +53,9 @@
              if(message.msgType && [message.msgType isEqualToString:@"acceptance"]) {
                  //TODO
              } else {
-//                 [self.messageList addObject:message];
+                 [self.messageList addObject:message];
              }
-             NSLog(@"!!!!!!!!!!!!!!!!!NOW THE COUNT IS!!!!!!!!!!! %lu", (unsigned long)[self.messageList count]);
+//             NSLog(@"!!!!!!!!!!!!!!!!!NOW THE COUNT IS!!!!!!!!!!! %lu", (unsigned long)[self.messageList count]);
              [self.messageTableView reloadData];
          }];
         [self establishConnection];
