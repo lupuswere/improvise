@@ -90,6 +90,30 @@
     [self clearInvitedInvitations];
 }
 
+- (IBAction)sportsChannelOpen:(UISwitch *)sender {
+    if (sender.isOn) {
+        [self.sportsMessageCountLabel setHidden:NO];
+    } else {
+        [self.sportsMessageCountLabel setHidden:YES];
+    }
+}
+
+- (IBAction)dinnerChannelOpen:(UISwitch *)sender {
+    if (sender.isOn) {
+        [self.dinnerMessageCountLabel setHidden:NO];
+    } else {
+        [self.dinnerMessageCountLabel setHidden:YES];
+    }
+}
+
+- (IBAction)movieChannelOpen:(UISwitch *)sender {
+    if (sender.isOn) {
+        [self.movieMessageCountLabel setHidden:NO];
+    } else {
+        [self.movieMessageCountLabel setHidden:YES];
+    }
+}
+
 - (void)clearAcceptedInvitations
 {
     AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];

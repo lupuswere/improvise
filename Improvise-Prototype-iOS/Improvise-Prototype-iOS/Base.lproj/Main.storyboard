@@ -119,9 +119,15 @@
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tmv-Hs-keZ">
                                 <rect key="frame" x="255" y="78" width="51" height="31"/>
+                                <connections>
+                                    <action selector="sportsChannelOpen:" destination="9pv-A4-QxB" eventType="valueChanged" id="6FY-2O-KGK"/>
+                                </connections>
                             </switch>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZRm-k7-0Z0">
                                 <rect key="frame" x="255" y="128" width="51" height="31"/>
+                                <connections>
+                                    <action selector="dinnerChannelOpen:" destination="9pv-A4-QxB" eventType="valueChanged" id="GNc-Jy-df5"/>
+                                </connections>
                             </switch>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ylv-br-oT7">
                                 <rect key="frame" x="-65" y="167" width="450" height="50"/>
@@ -137,6 +143,9 @@
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wmz-aX-39b">
                                 <rect key="frame" x="255" y="176" width="51" height="31"/>
+                                <connections>
+                                    <action selector="movieChannelOpen:" destination="9pv-A4-QxB" eventType="valueChanged" id="Vom-t5-m8G"/>
+                                </connections>
                             </switch>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VEB-gN-z5d">
                                 <rect key="frame" x="0.0" y="473" width="320" height="46"/>
@@ -376,7 +385,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="210" y="923"/>
+            <point key="canvasLocation" x="247" y="1239"/>
         </scene>
         <!--Landing View Controller-->
         <scene sceneID="r1U-88-fe1">
