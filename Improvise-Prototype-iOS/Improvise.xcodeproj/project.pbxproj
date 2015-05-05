@@ -482,12 +482,12 @@
 			baseConfigurationReference = D43D1665D248E6711EAA8B93 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Lifei Li (547VUR8857)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Lifei Li (547VUR8857)";
 				INFOPLIST_FILE = "Improvise-Prototype-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = Improvise;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "53513aee-0755-4103-8793-97c838106947";
 			};
 			name = Debug;
 		};
@@ -496,12 +496,12 @@
 			baseConfigurationReference = DBD2502D514D11BF82328DF1 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Lifei Li (547VUR8857)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Lifei Li (547VUR8857)";
 				INFOPLIST_FILE = "Improvise-Prototype-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = Improvise;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "53513aee-0755-4103-8793-97c838106947";
 			};
 			name = Release;
 		};
