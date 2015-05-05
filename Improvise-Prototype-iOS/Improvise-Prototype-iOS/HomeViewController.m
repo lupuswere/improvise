@@ -28,6 +28,7 @@
     self.sportsMessageCountLabel.text = @"0";
     self.dinnerMessageCountLabel.text = @"0";
     self.movieMessageCountLabel.text = @"0";
+    appDelegate.tmp = [[NSMutableArray alloc] init];
     [SIOSocket socketWithHost: @"http://improvise.jit.su" response: ^(SIOSocket *socket) {
         self.socket = socket;
         __weak typeof(self) weakSelf = self;
@@ -47,7 +48,9 @@
                  //TODO
              } else {
                  [self.sportsMessages addObject:message];
+                 NSLog(@"HOME:SPORTS MESSAGES ADDED!");
                  [appDelegate.tmp addObject:message];
+                 NSLog(@"HOME:APPDELEGATE ADDED!");
              }
              [self updateSportsChannelCount];
          }];
