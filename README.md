@@ -4,6 +4,7 @@ _The repository for the client side (mobile) for improvise_
 
 * Author: Lifei Li, Menglin He, Haoyu Liu, Weining Gu
 * The server side code is [here](https://github.com/lupuswere/improvise-prototype).
+
 ## Repository structure
 * Improvise-Prototype
 
