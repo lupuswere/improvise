@@ -86,7 +86,7 @@ if(dataAcceptedInvitations) {
 * Relevant class: LandingViewController
 
 ### Push notifications
-* This is the (http://www.raywenderlich.com/32960/apple-push-notification-services-in-ios-6-tutorial-part-1 "tutorial") for the mobile side.
+* This is the tutorial(http://www.raywenderlich.com/32960/apple-push-notification-services-in-ios-6-tutorial-part-1 "tutorial") for the mobile side.
 * Relevant class: AppDelegate
 * Notice: the code for AppDelegate may expire as the iOS version upgrades. If come across problems, please check out latest code for this online.
 
