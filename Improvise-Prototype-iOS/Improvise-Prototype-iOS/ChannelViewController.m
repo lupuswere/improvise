@@ -30,8 +30,13 @@
     AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     self.messageList = [[NSMutableArray alloc] init];
     if(appDelegate.tmp) {
+        NSMutableSet *dup = [[NSMutableSet alloc] init];
         for(Message *message in appDelegate.tmp) {
-            [self.messageList addObject:message];
+            NSString *str = [NSString stringWithFormat:@"%@ %@", message.text, message.author];
+            if(![dup containsObject:str]){
+                [self.messageList addObject:message];
+                [dup addObject:str];
+            }
         }
     }
     //TODO Connect to WebSocket
