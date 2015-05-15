@@ -1,16 +1,16 @@
-# Improvite
+# Improvise
 
-_The repository for the client side (mobile) for improvite_
+_The repository for the client side (mobile) for Improvise_
 
 * Author: Lifei Li, Menglin He, Haoyu Liu, Weining Gu
-* The server side code is [here](https://github.com/lupuswere/improvite-prototype).
+* The server side code is [here](https://github.com/lupuswere/Improvise-prototype).
 
 ## Repository structure
-* Improvite-Prototype
+* Improvise-Prototype
 
 This is the folder for a HTML wrapped mobile app. There is only one UIWebView in the app, showing the web app.
 
-* Improvite-Prototype-iOS
+* Improvise-Prototype-iOS
 
 This is the folder for the native iOS app.
 
